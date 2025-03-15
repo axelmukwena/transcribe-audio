@@ -1,6 +1,7 @@
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 from datasets import load_dataset
+import json
 
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -30,6 +31,6 @@ generate_kwargs = {
 audio_file = "data/input/meeting.wav"
 result = pipe(audio_file, generate_kwargs=generate_kwargs)
 print(result)
-with open("result.txt", "w") as f:
-        f.write(result)
+with open("data/output/meeting.json", "w") as f:
+    json.dump(result, f)
         
