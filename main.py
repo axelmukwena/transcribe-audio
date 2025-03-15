@@ -1,8 +1,7 @@
-import torch
-from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
-from datasets import load_dataset
 import json
 
+import torch
+from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
@@ -33,4 +32,3 @@ result = pipe(audio_file, generate_kwargs=generate_kwargs)
 print(result)
 with open("data/output/meeting.json", "w") as f:
     json.dump(result, f)
-        
