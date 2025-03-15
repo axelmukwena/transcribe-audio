@@ -1,0 +1,4 @@
+transformers==4.49.0
+datasets[audio]==3.4.0
+accelerate==1.5.2
+ffmpeg==1.4

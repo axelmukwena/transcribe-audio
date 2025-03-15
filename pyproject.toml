@@ -1,0 +1,19 @@
+[tool.ruff]
+line-length = 100
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.lint]
+unfixable = ["F841","F401"]
+extend-select = ["UP", "E501"]
+extend-ignore = ["B008"]
+select = ["E", "F", "B", "Q", "C", "I"]
+fixable = ["E", "F", "B", "Q", "C", "I"]
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "double"
+docstring-code-format = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
